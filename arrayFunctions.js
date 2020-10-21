@@ -10,7 +10,14 @@
  */
 function getOdds(numbers) {
   // Your code here
+  const oddNumbers = numbers.filter(function(number){
+    console.log(number);
+    return number % 2 !== 0 ;
+  });
+  return oddNumbers;
 }
+
+console.log(getOdds([1, 2, 3, 4, 5, 6, 7, 8, 9]));
 
 /**
  * getEvens(numbers):
@@ -24,7 +31,13 @@ function getOdds(numbers) {
  */
 function getEvens(numbers) {
   // Your code here
+  const evenNumbers = numbers.filter(function(number){
+    return number % 2 === 0;
+  });
+  return evenNumbers;
 }
+
+console.log(getEvens([1, 2, 3, 4, 5, 6, 7, 8, 9]));
 
 /**
  * getDuplicateCount(x, numbers):
@@ -37,8 +50,13 @@ function getEvens(numbers) {
  */
 function getDuplicateCount(x, numbers) {
   // Your code here
-}
+  const newNumber = numbers.filter(function(number){
+    return number === x;
 
+  });
+  return newNumber.length;
+}
+console.log(getDuplicateCount(1, [1, 2, 3, 1, 4, 5, 6, 1, 7, 8, 9, 10, 11, 1, 12, 13]));
 /**
  * makeThemDoctors(students):
  * - receives array `students`
@@ -50,6 +68,11 @@ function getDuplicateCount(x, numbers) {
 
 function makeThemDoctors(students) {
   // Your code here
+  const Drs = students.map(function(student){
+    return `Dr. ${student}` ;
+  });
+  return Drs;
 }
+console.log(makeThemDoctors(["Ali", "Aseel", "Richard"]));
 
 module.exports = { getOdds, getEvens, getDuplicateCount, makeThemDoctors };
